@@ -13,12 +13,22 @@ function draw_clock(obj) {
   //        > 0 --> the number of seconds until alarm should go off
   background(50); //  beige
   fill(200); // dark grey
+  noStroke();
   textSize(40);
   textAlign(CENTER, CENTER);
-  text("YOUR MAIN CLOCK CODE GOES HERE", width / 2, 200);
+  // text("YOUR MAIN CLOCK CODE GOES HERE", width / 2, 200);
 
-  fill("#fffff");
-  ellipse(width / 3, 350, 150);
+  stroke('#fffff');
+  strokeWeight(2);
+  noFill();
+
+
+  ellipse(480, 250, 400, 400);
+  ellipse(480, 250, 300, 300);
+
+  // ellipse(480, 700, 900, 900); 
+  ellipse(1010, 250, 500, 500);
+  ellipse(-50, 250, 500, 500);
 
   // fill(249, 140, 255);// pink
   // ellipse(width / 3, 350, 150);
