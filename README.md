@@ -11,3 +11,4 @@ Ideas:
 - Throughout the day the sun ring will shrink and by the end of the day the moon ring would have enlarged in place of the sun ring
 - Side rings will rotate in minutes
 - Time indication will be in Roman numerals
+- star symbols will act as clock hands
