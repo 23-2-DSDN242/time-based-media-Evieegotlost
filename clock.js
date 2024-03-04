@@ -18,18 +18,23 @@ function draw_clock(obj) {
   textAlign(CENTER, CENTER);
   // text("YOUR MAIN CLOCK CODE GOES HERE", width / 2, 200);
 
+
+
   stroke('#fffff');
   strokeWeight(2);
   noFill();
 
+  ellipse(480, 250, 400);
 
-  ellipse(480, 250, 400, 400);
-  ellipse(480, 250, 250, 250);
-  ellipse(500, 236, 200, 200);
+  fill('#ebd294');
+  ellipse(480, 250, 250);
+fill(50);
+  ellipse(480, 224, 200);
 
+  noFill();
   // ellipse(480, 700, 900, 900); 
-  ellipse(1010, 250, 500, 500);
-  ellipse(-50, 250, 500, 500);
+  ellipse(1010, 250, 500);
+  ellipse(-50, 250, 500);
 
   // fill(249, 140, 255);// pink
   // ellipse(width / 3, 350, 150);
