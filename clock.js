@@ -24,7 +24,7 @@ function draw_clock(obj) {
 
 
   ellipse(480, 250, 400, 400);
-  ellipse(480, 250, 300, 300);
+  ellipse(480, 250, 250, 250);
 
   // ellipse(480, 700, 900, 900); 
   ellipse(1010, 250, 500, 500);
