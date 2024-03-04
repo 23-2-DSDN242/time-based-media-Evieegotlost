@@ -17,12 +17,14 @@ function draw_clock(obj) {
   textAlign(CENTER, CENTER);
   text("YOUR MAIN CLOCK CODE GOES HERE", width / 2, 200);
 
-
-  fill(249, 140, 255);// pink
+  fill("#fffff");
   ellipse(width / 3, 350, 150);
-  fill(140, 255, 251) // blue
-  ellipse(width / 2, 350, 150);
-  fill(175, 133, 255); // purple
-  ellipse(width / 3 * 2, 350, 150);
+
+  // fill(249, 140, 255);// pink
+  // ellipse(width / 3, 350, 150);
+  // fill(140, 255, 251) // blue
+  // ellipse(width / 2, 350, 150);
+  // fill(175, 133, 255); // purple
+  // ellipse(width / 3 * 2, 350, 150);
 
 }
