@@ -29,7 +29,7 @@ function draw_clock(obj) {
   fill('#ebd294');
   ellipse(480, 250, 250);
 fill(50);
-  ellipse(480, 224, 200);
+  ellipse(480, 225, 200);
 
   noFill();
   // ellipse(480, 700, 900, 900); 
