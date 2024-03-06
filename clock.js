@@ -17,10 +17,12 @@ function draw_clock(obj) {
   textSize(40);
   textAlign(CENTER, CENTER);
   // text("YOUR MAIN CLOCK CODE GOES HERE", width / 2, 200);
+ 
 
+  Sunpoints = loadImage('assets/sunpoints.png');
 
   
-  stroke('#fffff');
+  stroke('#ffffff');
   strokeWeight(2);
   noFill();
 
@@ -29,16 +31,16 @@ function draw_clock(obj) {
 
   fill('#ebd294');
   ellipse(480, 250, 250);
-fill(50);
+  fill(50);
   ellipse(480, 225, 200);
 
   noFill();
   // ellipse(480, 700, 900, 900); 
   ellipse(1010, 250, 500);
   ellipse(-50, 250, 500);
-  
-  Sunpoints = loadImage('assets/sunpoints.png');
-  image(Sunpoints, 480, 250);
+
+
+  image(Sunpoints, 0, 0, 1000, 1000);
   // fill(249, 140, 255);// pink
   // ellipse(width / 3, 350, 150);
   // fill(140, 255, 251) // blue
