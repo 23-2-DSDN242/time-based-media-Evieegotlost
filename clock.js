@@ -5,7 +5,7 @@ let Sunpoints;
 
 function preload() {
   Sunpoints = loadImage('assets/sunpoints.png');
-  Indipoint = loadImage('assets/indipoint.png');
+  Indipoint = loadImage('assets/indipoint2.png');
 }
 function draw_clock(obj) {
 
@@ -18,21 +18,29 @@ function draw_clock(obj) {
   //        < 0 if no alarm is set
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
+ 
+ 
   background(50);
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
- push()
-  
-  stroke('#ffffff');
+  // let pointRotation = map(seconds, 0, 59, 0, 360);
+   stroke('#ffffff');
   strokeWeight(2);
   noFill();
-
+ drawPoints()
+ 
+  function drawPoints(x, y, s){
+  push()
 for(let i = 0; i < 12; i++){
   rotate (360/12)
-// rect (10, -450/2, 20, size)
  image(Indipoint, -450/6, 110, size, size);
+
 }
+  pop()
+  }
+
+  
   ellipse(0, 0, 300);
 
   fill('#ebd294');
@@ -47,7 +55,7 @@ for(let i = 0; i < 12; i++){
 
 
   // image(Sunpoints, -300, -300, 620, 620);
-  pop()
+
 }
 
 
