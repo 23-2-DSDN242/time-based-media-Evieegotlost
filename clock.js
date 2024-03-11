@@ -5,6 +5,7 @@ let Sunpoints;
 
 function preload() {
   Sunpoints = loadImage('assets/sunpoints.png');
+  Indipoint = loadImage('assets/indisunpoint.png');
 }
 function draw_clock(obj) {
 
@@ -19,20 +20,25 @@ function draw_clock(obj) {
   //        > 0 --> the number of seconds until alarm should go off
   background(50);
   angleMode (DEGREES);
-
- 
+  translate (width/2, height/2);
+  let size = 80;
+ push()
   
   stroke('#ffffff');
   strokeWeight(2);
   noFill();
 
-
-  ellipse(480, 250, 300);
+for(let i = 0; i < 12; i++){
+  rotate (360/12)
+rect (10, -450/2, 20, size)
+ image(Indipoint, -300, -300, 80, size);
+}
+  ellipse(0, 0, 300);
 
   fill('#ebd294');
-  ellipse(480, 250, 220);
+  ellipse(0, 0, 220);
   fill(50);
-  ellipse(480, 231, 180);
+  ellipse(0, -20, 180);
 
   noFill();
   // ellipse(480, 700, 900, 900); 
@@ -40,6 +46,16 @@ function draw_clock(obj) {
   ellipse(-50, 250, 500);
 
 
-  image(Sunpoints, 170, -60, 620, 620);
-  
+  // image(Sunpoints, -300, -300, 620, 620);
+  pop()
 }
+
+
+
+// function drawTriangles(x, y, s){
+//   fill(255)
+//   triangle (x, y
+//     x+s/2,y+s,
+//     x-s/2,y+s )
+
+// }
