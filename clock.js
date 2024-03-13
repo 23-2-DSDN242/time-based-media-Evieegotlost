@@ -24,21 +24,21 @@ function draw_clock(obj) {
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
-  // let pointRotation = map(seconds, 0, 59, 0, 360);
+  let pointRotation = map(obj.seconds, 0, 59, 0, 360);
    stroke('#ffffff');
   strokeWeight(2);
   noFill();
- drawPoints()
+
  
-  function drawPoints(x, y, s){
   push()
+  rotate(pointRotation)
 for(let i = 0; i < 12; i++){
   rotate (360/12)
  image(Indipoint, -450/6, 110, size, size);
 
 }
   pop()
-  }
+
 
   
   ellipse(0, 0, 300);
