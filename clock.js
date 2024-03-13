@@ -20,11 +20,11 @@ function draw_clock(obj) {
   //        > 0 --> the number of seconds until alarm should go off
  
  
-  background(50);
+  background('#0f1726');
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
-  let pointRotation = map(obj.seconds, 0, 59, 0, 360);
+  let pointRotation = map(obj.seconds, 0, 59, 0, 90);
    stroke('#ffffff');
   strokeWeight(2);
   noFill();
@@ -45,7 +45,7 @@ for(let i = 0; i < 12; i++){
 
   fill('#ebd294');
   ellipse(0, 0, 220);
-  fill(50);
+  fill('#0f1726');
   ellipse(0, -20, 180);
 
   noFill();
