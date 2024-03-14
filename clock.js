@@ -41,16 +41,27 @@ for(let i = 0; i < 12; i++){
 
 }
   pop()
-  drawSide ();
-
+  drawSideL ();
+  drawSideR ();
   
-  function drawSide(){
+  function drawSideL(){
   push()
   translate(-500,0)
   rotate(pointRotation2)
 for(let i = 0; i < 12; i++){
   rotate (360/12)
- image(Sidepoint, -450/6, 150, size, size);
+ image(Sidepoint, -450/6, 90, size, size+50);
+}
+  pop()
+}
+
+function drawSideR(){
+  push()
+  translate(500,0)
+  rotate(pointRotation2)
+for(let i = 0; i < 12; i++){
+  rotate (360/12)
+ image(Sidepoint, -450/6, 90, size, size+50);
 }
   pop()
 }
