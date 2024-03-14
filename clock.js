@@ -6,7 +6,7 @@ let Sunpoints;
 function preload() {
   Sunpoints = loadImage('assets/sunpoints.png');
   Indipoint = loadImage('assets/indipoint2.png');
-  Sidepoint = loadImage('assets/indipoint.png');
+  Sidepoint = loadImage('assets/indipoint3.png');
 }
 function draw_clock(obj) {
 
@@ -25,7 +25,10 @@ function draw_clock(obj) {
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
-  let pointRotation = map(obj.seconds, 0, 59, 0, 90);
+  let seconds = obj.seconds;
+  let millis = obj.millis;
+  let secondsWithFraction   = seconds + (millis / 1000.0);
+  // let pointRotation = map(obj.secondsWithFraction, 0, 60, 0, 360);
   let pointRotation2 = map(obj.seconds, 0, 59, 0, -90);
    stroke('#ffffff');
   strokeWeight(2);
@@ -34,7 +37,7 @@ function draw_clock(obj) {
 
  
   push()
-  rotate(pointRotation)
+  rotate(secondsWithFraction)
 for(let i = 0; i < 12; i++){
   rotate (360/12)
  image(Indipoint, -450/6, 110, size, size);
@@ -75,8 +78,8 @@ for(let i = 0; i < 12; i++){
 
   noFill();
   // ellipse(480, 700, 900, 900); 
-  ellipse(500, 0, 500);
-  ellipse(-500, 0, 500);
+  ellipse(500, 0, 300);
+  ellipse(-500, 0, 300);
 
 
   // image(Sunpoints, -300, -300, 620, 620);
