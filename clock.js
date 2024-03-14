@@ -55,7 +55,7 @@ function drawCenter2(){
 for(let i = 0; i < 12; i++){
   rotate (360/12)
 fill(255);
-quad(35, 157, 30, 148, 30, 133, 35, 145);
+quad(35, 157, 30, 148, 30, 133, 36, 146);
 //(top, right, bottom, left)
 }
   pop()
