@@ -95,7 +95,10 @@ for(let i = 0; i < 12; i++){
   ellipse(500, 0, 300);
   ellipse(-500, 0, 300);
 
-
+  fill(255);
+  strokeWeight(0.7)
+  line(-1000, -230, 1000, -230);
+  line(-1000, 230, 1000, 230);
   // image(Sunpoints, -300, -300, 620, 620);
 
 }
