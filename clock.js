@@ -28,14 +28,17 @@ function draw_clock(obj) {
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction   = seconds + (millis / 1000.0);
-  // let pointRotation = map(obj.secondsWithFraction, 0, 60, 0, 360);
+  let minRotation = map(obj.minutes, 0, 59, 0, 360);
   let pointRotation2 = map(obj.seconds, 0, 59, 0, -90);
    stroke('#ffffff');
   strokeWeight(2);
   noFill();
+  drawSideL ();
+  drawSideR ();
+  drawCenter ();
+  drawCenter2 ();
 
-
- 
+  function drawCenter(){
   push()
   rotate(secondsWithFraction)
 for(let i = 0; i < 12; i++){
@@ -44,9 +47,20 @@ for(let i = 0; i < 12; i++){
 
 }
   pop()
-  drawSideL ();
-  drawSideR ();
-  
+}
+
+function drawCenter2(){
+  push()
+  rotate(minRotation)
+for(let i = 0; i < 12; i++){
+  rotate (360/12)
+fill(255);
+quad(35, 157, 30, 148, 30, 133, 35, 145);
+//(top, right, bottom, left)
+}
+  pop()
+}
+
   function drawSideL(){
   push()
   translate(-500,0)
@@ -58,7 +72,7 @@ for(let i = 0; i < 12; i++){
   pop()
 }
 
-function drawSideR(){
+  function drawSideR(){
   push()
   translate(500,0)
   rotate(pointRotation2)
