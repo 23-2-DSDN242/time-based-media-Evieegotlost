@@ -40,6 +40,7 @@ function draw_clock(obj) {
   drawMoon();
   drawMins();
   drawHours();
+  drawHourhand();
 
   function drawCenter(){
   push()
@@ -126,12 +127,26 @@ rect(-0.5, 185, 1, 40);
   pop()
 }
 
+function drawHourhand(){
+
+  push()
+  translate(0,0)
+  rotate(obj.hours)
+  for(let i = 0; i < 1; i++){
+    rotate (360/1)
+    quad(35, 157, 30, 148, 30, 133, 36, 146);
+
+  pop()
+}
+}
+
+
    strokeWeight(1.5)
   ellipse(0, 0, 550, 550); 
   ellipse(500, 0, 300);
   ellipse(-500, 0, 300);
 
-  fill('#0f1726');
+  // fill('#0f1726');
   rect(-1000, -230, 2000, -230);
   rect(-1000, 230, 2000, 230);
   // image(Sunpoints, -300, -300, 620, 620);
