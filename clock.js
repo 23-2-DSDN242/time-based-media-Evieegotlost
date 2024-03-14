@@ -30,6 +30,7 @@ function draw_clock(obj) {
   let secondsWithFraction = seconds + (millis / 1000.0);
   let minRotation = map(obj.minutes, 0, 59, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
+  let hourRotation = map(obj.hours, 0, 23, 0, 360);
    stroke('#ffffff');
   strokeWeight(2);
   noFill();
@@ -131,7 +132,7 @@ function drawHourhand(){
 
   push()
   translate(0,0)
-  rotate(obj.hours)
+  rotate(hourRotation)
   for(let i = 0; i < 1; i++){
     rotate (360/1)
     quad(35, 157, 30, 148, 30, 133, 36, 146);
