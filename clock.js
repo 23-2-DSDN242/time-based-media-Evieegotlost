@@ -110,7 +110,7 @@ for(let i = 0; i < 60; i++){
   rotate (360/60)
 fill(255);
 rect(0, 190, 0, 25);
-//(top, right, bottom, left)
+
 }
   pop()
 }
@@ -121,7 +121,7 @@ for(let i = 0; i < 12; i++){
   rotate (360/12)
 fill(255);
 rect(-0.5, 185, 1, 40);
-//(top, right, bottom, left)
+
 }
   pop()
 }
@@ -131,7 +131,7 @@ rect(-0.5, 185, 1, 40);
   ellipse(500, 0, 300);
   ellipse(-500, 0, 300);
 
-
+  fill('#0f1726');
   rect(-1000, -230, 2000, -230);
   rect(-1000, 230, 2000, 230);
   // image(Sunpoints, -300, -300, 620, 620);
