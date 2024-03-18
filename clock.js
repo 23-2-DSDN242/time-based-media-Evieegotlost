@@ -8,6 +8,7 @@ function preload() {
   Indipoint = loadImage('assets/indipoint2.png');
   Sidepoint = loadImage('assets/indipoint3.png');
   MinuteHand = loadImage('assets/minutehand.png');
+  Star = loadImage('assets/star.png');
 }
 function draw_clock(obj) {
 
@@ -31,7 +32,7 @@ function draw_clock(obj) {
   let secondsWithFraction = seconds + (millis / 1000.0);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
-  let hourRotation = map(obj.hours, 0, 23, 0, 360);
+  let hourRotation = map(obj.hours, 0, 24, 0, 360);
    stroke('#ffffff');
   strokeWeight(2);
   noFill();
@@ -133,14 +134,14 @@ rect(-0.5, 195, 1, 40);
 function drawHourhand(){
 
   push()
-  translate(-10, -10)
+  translate(0, 0)
   rotate(hourRotation)
   for(let i = 0; i < 1; i++){
-    rotate (360/1)
-    fill('#ebd294');
-    noStroke();
-    rect(0, 200, 20, 20);
 
+    // fill('#ebd294');
+    // noStroke();
+    // rect(0, 200, 20, 20);
+image(Star, -30 ,180, 60, 60);
   pop()
 }
 }
