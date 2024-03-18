@@ -7,6 +7,7 @@ function preload() {
   Sunpoints = loadImage('assets/sunpoints.png');
   Indipoint = loadImage('assets/indipoint2.png');
   Sidepoint = loadImage('assets/indipoint3.png');
+  MinuteHand = loadImage('assets/minutehand.png');
 }
 function draw_clock(obj) {
 
@@ -96,7 +97,7 @@ for(let i = 0; i < 12; i++){
   push()
   translate(0,0)
   rotate(minRotation)
-
+  image(MinuteHand, 0, 0, 50, 50);
   noStroke();
   fill('#ebd294');
   ellipse(0, 0, 220);
