@@ -29,7 +29,7 @@ function draw_clock(obj) {
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction = seconds + (millis / 1000.0);
-  let minRotation = map(obj.minutes, 0, 59, 0, 360);
+  let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
   let hourRotation = map(obj.hours, 0, 23, 0, 360);
    stroke('#ffffff');
@@ -97,13 +97,14 @@ for(let i = 0; i < 12; i++){
   push()
   translate(0,0)
   rotate(minRotation)
-  image(MinuteHand, 0, 0, 50, 50);
+
   noStroke();
   fill('#ebd294');
   ellipse(0, 0, 220);
-  
+
   fill('#0f1726');
   ellipse(0, -20, 180);
+  image(MinuteHand, -225, -225, 450, 450);
   pop()
 }
 
@@ -123,7 +124,7 @@ function drawHours(){
 for(let i = 0; i < 12; i++){
   rotate (360/12)
 fill(255);
-rect(-0.5, 185, 1, 40);
+rect(-0.5, 195, 1, 40);
 
 }
   pop()
@@ -132,11 +133,13 @@ rect(-0.5, 185, 1, 40);
 function drawHourhand(){
 
   push()
-  translate(0,0)
+  translate(-10, -10)
   rotate(hourRotation)
   for(let i = 0; i < 1; i++){
     rotate (360/1)
-    quad(35, 157, 30, 148, 30, 133, 36, 146);
+    fill('#ebd294');
+    noStroke();
+    rect(0, 200, 20, 20);
 
   pop()
 }
