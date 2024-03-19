@@ -27,15 +27,24 @@ function draw_clock(obj) {
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
+  let clockHour = obj.hours;
+  
+  if (obj.hours < 1){
+    clockHour = 12;  // no zero allowed
+  }
+
+  if (obj.hours > 12){ //never over 12
+    clockHour = obj.hours - 12;
+  }
+  
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction = seconds + (millis / 1000.0);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
-  let hourRotation = map(obj.hours, 0, 24, 0, 360);
-   stroke('#ffffff');
-  strokeWeight(2);
-  noFill();
+  let hourRotation = map(obj.hours, 0, 12, 0, 360);
+  drawLerp();
+  drawSides();
   drawSideL ();
   drawSideR ();
   drawCenter ();
@@ -45,7 +54,33 @@ function draw_clock(obj) {
   drawHours();
   drawHourhand();
 
+
+
+function drawLerp(){
+    background('#0f1726');
+ellipseMode(CENTER);
+noStroke();
+let OpacityAm = 30;
+  fill(255, 237, 179, OpacityAm);
+  let sizeStep = 15;
+  let howManyCircles = 20;
+  let width = 0;
+  let height= 0;
+  for(let i = 0; i < howManyCircles; i++){
+    ellipse(width/2, height/2, sizeStep*i);
+  }
+  for(let i = 0; i < howManyCircles+15; i++){
+    fill(31, 60, 99, 20);
+    ellipse(width+500, height/2, sizeStep*i);
+    ellipse(width-500, height/2, sizeStep*i);
+  }
+}
+
+  noFill();
+
   function drawCenter(){
+    stroke('#ffffff');
+    strokeWeight(2);
   push()
   rotate(secondsWithFraction)
 for(let i = 0; i < 12; i++){
@@ -57,6 +92,7 @@ for(let i = 0; i < 12; i++){
 }
 
 function drawCenter2(){
+  
   push()
   rotate(-secondsWithFraction)
 for(let i = 0; i < 12; i++){
@@ -69,6 +105,22 @@ for(let i = 0; i < 12; i++){
           //(top, right, bottom, left)
 }
   pop()
+}
+
+
+function drawSides(){
+strokeWeight(1.5)
+stroke(255);
+noFill();
+ellipse(0, 0, 550, 550); 
+fill('#0f1726');
+ellipse(500, 0, 300);
+ellipse(-500, 0, 300);
+
+noFill();
+rect(-1000, -230, 2000, -230);
+rect(-1000, 230, 2000, 230);
+// image(Sunpoints, -300, -300, 620, 620);
 }
 
   function drawSideL(){
@@ -100,7 +152,7 @@ for(let i = 0; i < 12; i++){
   rotate(minRotation)
 
   noStroke();
-  fill('#ebd294');
+  fill('#fff9d1');
   ellipse(0, 0, 220);
 
   fill('#0f1726');
@@ -122,7 +174,7 @@ rect(0, 190, 0, 25);
 
 function drawHours(){
   push()
-for(let i = 0; i < 12; i++){
+for(let i = 1; i < 12; i++){
   rotate (360/12)
 fill(255);
 rect(-0.5, 185, 1, 40);
@@ -136,26 +188,13 @@ function drawHourhand(){
   push()
   translate(0, 0)
   rotate(hourRotation)
+
   for(let i = 0; i < 1; i++){
 
-    // fill('#ebd294');
-    // noStroke();
-    // rect(0, 200, 20, 20);
-image(Star, -30 ,180, 60, 60);
+image(Star, -30 ,-470/2, 60, 60);
   pop()
 }
 }
-
-
-   strokeWeight(1.5)
-  ellipse(0, 0, 550, 550); 
-  ellipse(500, 0, 300);
-  ellipse(-500, 0, 300);
-
-  // fill('#0f1726');
-  rect(-1000, -230, 2000, -230);
-  rect(-1000, 230, 2000, 230);
-  // image(Sunpoints, -300, -300, 620, 620);
 
 }
 
