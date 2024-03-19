@@ -8,7 +8,7 @@ function preload() {
   Indipoint = loadImage('assets/indipoint2.png');
   Sidepoint = loadImage('assets/indipoint3.png');
   MinuteHand = loadImage('assets/minutehand.png');
-  Star = loadImage('assets/star.png');
+  Star = loadImage('assets/hourstar.png');
 }
 function draw_clock(obj) {
 
@@ -113,7 +113,7 @@ strokeWeight(1.5)
 stroke(255);
 noFill();
 ellipse(0, 0, 550, 550); 
-fill('#0f1726');
+fill(15, 23, 38, 160);
 ellipse(500, 0, 300);
 ellipse(-500, 0, 300);
 
@@ -191,7 +191,7 @@ function drawHourhand(){
 
   for(let i = 0; i < 1; i++){
 
-image(Star, -30 ,-470/2, 60, 60);
+image(Star, -30 ,-510/2, 60, 85);
   pop()
 }
 }
