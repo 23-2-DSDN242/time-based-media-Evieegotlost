@@ -125,7 +125,7 @@ function drawHours(){
 for(let i = 0; i < 12; i++){
   rotate (360/12)
 fill(255);
-rect(-0.5, 195, 1, 40);
+rect(-0.5, 185, 1, 40);
 
 }
   pop()
