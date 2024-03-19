@@ -1,7 +1,6 @@
 /*
  * use p5.js to draw a clock on a 960x500 canvas
  */
-let Sunpoints;
 
 function preload() {
   Sunpoints = loadImage('assets/sunpoints.png');
@@ -220,6 +219,11 @@ image(Star, -30 ,-510/2, 60, 85);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
   let hourRotation = map(obj.hours, 0, 12, 0, 360);
+  let OpacityAm = 30;
+  let colorA = color(186, 133, 255, OpacityAm);
+  let colorB = color(163, 237, 255, OpacityAm);
+  let lerpSeconds = map(obj.millis, 0, 999, 0, 1);
+  let glowChange = lerpColor(colorA, colorB, lerpSeconds);
   drawLerp();
   drawSides();
   drawSideL ();
@@ -237,7 +241,7 @@ function drawLerp(){
 
 ellipseMode(CENTER);
 noStroke();
-let OpacityAm = 30;
+
   fill(255, 237, 179, OpacityAm);
   let sizeStep = 15;
   let howManyCircles = 20;
@@ -247,7 +251,7 @@ let OpacityAm = 30;
     ellipse(width/2, height/2, sizeStep*i);
   }
   for(let i = 0; i < howManyCircles+15; i++){
-    fill(163, 237, 255, 20);
+    fill(glowChange);
     ellipse(width+500, height/2, sizeStep*i);
     ellipse(width-500, height/2, sizeStep*i);
   }
