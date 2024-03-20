@@ -4,6 +4,15 @@
 
 Update this file as you go along to record your progress.
 
+How to read clock:
+
+Minutes: The centerpiece depicting a large crescent moon and star with one of the points slightly elongated indicating the current minute.
+
+Hours: A smaller moon + star symbol placed on the current hour alongside the minute hand.
+
+Seconds: Rotating points on the left and right side however, there's no way to indicate how many seconds there currently are in each minute.
+
+Week 1:
 Ideas:
 - Rotating array of points in a ring formation (resembling the sun which will be the starting point)
 - Inside that ring is another rotating smaller circle with a crescent moon
@@ -15,7 +24,10 @@ Ideas:
 - star symbols will act as clock hands(one place outside of the outer ring and one on the inside)
 - tiny stars replace sun points during moon phase
 
-Week 1:
+Progress: 
+- Laid out main positions of each element as well as drawing assets to import into the code
+
 Week 2:
+- At first the rotating asset was exportd
 Week 3:
 Week 4:
