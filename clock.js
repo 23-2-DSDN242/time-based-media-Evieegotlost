@@ -237,7 +237,7 @@ image(Star, -30 ,-510/2, 60, 85);
 
 
 }else if(obj.seconds_until_alarm > 0){
-
+// changes background to a light pink
       background('#e8bfbe');
 
   angleMode (DEGREES);
@@ -266,7 +266,7 @@ image(Star, -30 ,-510/2, 60, 85);
   drawHours();
   drawHourhand(); // Small yellow cresent+star symbol
 
-
+// makes the side gradients lerp between blue and purple continuously during alarm
 function drawLerp(){
 
   ellipseMode(CENTER);
@@ -331,7 +331,7 @@ for(let i = 0; i < 12; i++){
   pop()  
 }
 }
-
+// rings with small diamonds and circles rotate slightly faster during alarm
 function drawCenter2(){
 
 push()
