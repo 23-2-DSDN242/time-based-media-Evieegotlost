@@ -4,6 +4,8 @@
 
 Update this file as you go along to record your progress.
 
+
+
 How to read clock:
 
 Minutes: The centerpiece depicting a large crescent moon and star with one of the points slightly elongated indicating the current minute.
@@ -11,6 +13,8 @@ Minutes: The centerpiece depicting a large crescent moon and star with one of th
 Hours: A smaller moon + star symbol placed on the current hour alongside the minute hand.
 
 Seconds: Rotating points on the left and right side however, there's no way to indicate how many seconds there currently are in each minute.
+
+Alarm: Unfortunately when clicking 'Alarm Set' in debug the clock stops when the timer is active but, it will all play out just fine afterwards when it reaches 0.
 
 Week 1:
 Ideas:
@@ -26,10 +30,13 @@ Ideas:
 
 Progress: 
 - Laid out main positions of each element as well as drawing assets to import into the code
-- Kept the designs of each asset slightly more simple compared to its initial sketch as over time I'll be adding more elements 
+- Kept the designs of each asset slightly more simple compared to its initial sketch as over time I'll be adding more elements that could overwhelm the overall design if the assets were more ornate.
 
 Week 2:
-- At first the rotating asset was exported as displaying a whole ring of points but I later decided to export just the singular point for each variation so I could form the ring as an array which is more easier to fiddle with their placements
+- At first the rotating asset was exported as a png of a whole ring of points but I later decided to export just the singular point for each variation so I could form the ring as an array which is more easier to edit their orientation without any deformation in image quality
+- The secondary center rings with the tiny diamonds and circles were coded with quads and ellipses instead of being drawn like the other assets
 
 Week 3:
+
+
 Week 4:
