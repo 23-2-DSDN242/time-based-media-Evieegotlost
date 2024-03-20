@@ -78,17 +78,29 @@ let OpacityAm = 30;
 
   noFill();
 
-  function drawCenter(){
+function drawCenter(){
     stroke('#ffffff');
     strokeWeight(2);
+    if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+      let IndiY = 28;
+      push()
+      rotate(secondsWithFraction)
+    for(let i = 0; i < 12; i++){
+      rotate (360/12)
+     image(Indipoint, -450/6, IndiY, size, size);
+    }
+      pop()  
+}
+else{
+    let IndiY = 110;
   push()
   rotate(secondsWithFraction)
 for(let i = 0; i < 12; i++){
   rotate (360/12)
- image(Indipoint, -450/6, 110, size, size);
-
+ image(Indipoint, -450/6, IndiY, size, size);
 }
-  pop()
+  pop()  
+}
 }
 
 function drawCenter2(){
@@ -103,10 +115,10 @@ for(let i = 0; i < 12; i++){
     fill(255);
     quad(35, 157, 30, 148, 30, 133, 36, 146);
           //(top, right, bottom, left)
+    ellipse(0, 275, 7);
 }
   pop()
 }
-
 
 function drawSides(){
 strokeWeight(1.5)
@@ -123,7 +135,7 @@ rect(-1000, 230, 2000, 230);
 // image(Sunpoints, -300, -300, 620, 620);
 }
 
-  function drawSideL(){
+function drawSideL(){
   push()
   translate(-500,0)
   rotate(pointRotation)
@@ -134,7 +146,7 @@ for(let i = 0; i < 12; i++){
   pop()
 }
 
-  function drawSideR(){
+function drawSideR(){
   push()
   translate(500,0)
   rotate(pointRotation)
@@ -145,7 +157,7 @@ for(let i = 0; i < 12; i++){
   pop()
 }
 
-  function drawMoon(){
+function drawMoon(){
 
   push()
   translate(0,0)
@@ -200,7 +212,6 @@ image(Star, -30 ,-510/2, 60, 85);
 
 
 
-
 }else if(obj.seconds_until_alarm > 0){
 
       background('#e8bfbe');
@@ -211,10 +222,10 @@ image(Star, -30 ,-510/2, 60, 85);
   let clockHour = obj.hours;
   
   if (obj.hours < 1){
-    clockHour = 12;  // no zero allowed
+    clockHour = 12;
   }
 
-  if (obj.hours > 12){ //never over 12
+  if (obj.hours > 12){
     clockHour = obj.hours - 12;
   }
   
@@ -264,35 +275,47 @@ noStroke();
 
   noFill();
 
-  function drawCenter(){
-    stroke('#ffffff');
-    strokeWeight(2);
-  push()
-  rotate(secondsWithFraction)
-for(let i = 0; i < 12; i++){
-  rotate (360/12)
- image(Indipoint, -450/6, 110, size, size);
-
+function drawCenter(){
+  stroke('#ffffff');
+  strokeWeight(2);
+  if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+    let IndiY = 28;
+    push()
+    rotate(secondsWithFraction)
+  for(let i = 0; i < 12; i++){
+    rotate (360/12)
+   image(Indipoint, -450/6, IndiY, size, size);
+  }
+    pop()  
 }
-  pop()
+else{
+  let IndiY = 110;
+push()
+rotate(secondsWithFraction)
+for(let i = 0; i < 12; i++){
+rotate (360/12)
+image(Indipoint, -450/6, IndiY, size, size);
+}
+pop()  
+}
 }
 
 function drawCenter2(){
-  
-  push()
-  rotate(-secondsWithFraction)
-for(let i = 0; i < 12; i++){
-  rotate (360/12)
-   noFill();
-   strokeWeight(1)
-    ellipse(0, 0, 300);
-    fill(255);
-    quad(35, 157, 30, 148, 30, 133, 36, 146);
-          //(top, right, bottom, left)
-}
-  pop()
-}
 
+push()
+rotate(-secondsWithFraction)
+for(let i = 0; i < 12; i++){
+rotate (360/12)
+ noFill();
+ strokeWeight(1)
+  ellipse(0, 0, 300);
+  fill(255);
+  quad(35, 157, 30, 148, 30, 133, 36, 146);
+        //(top, right, bottom, left)
+  ellipse(0, 275, 7);
+}
+pop()
+}
 
 function drawSides(){
 strokeWeight(1.5)
@@ -360,7 +383,7 @@ rect(0, 190, 0, 25);
 
 function drawHours(){
   push()
-for(let i = 1; i < 12; i++){
+for(let i = 0; i < 12; i++){
   rotate (360/12)
 fill(255);
 rect(-0.5, 185, 1, 40);
