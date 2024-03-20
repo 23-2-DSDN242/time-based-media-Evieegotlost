@@ -11,7 +11,11 @@ Ideas:
 - Throughout the day the sun ring will shrink and by the end of the day the moon ring would have enlarged in place of the sun ring
 - Side rings will rotate in minutes
 - Time indication can be in Roman numerals possibly in a vertical scale and at each level indicates the current hour when one of the rings reaches it(though this could be a problem since there are two rings)
-- I could solve this by having the sun ring as the main hour indicator with only the enlarging and shrinking motion and no rotation, its array of point will be offset as its own rotating ring
+- I could solve this by having the sun ring as the main hour indicator with only the enlarging and shrinking motion and no rotation, its array of points will be offset as its own rotating ring
 - star symbols will act as clock hands(one place outside of the outer ring and one on the inside)
-
 - tiny stars replace sun points during moon phase
+
+Week 1:
+Week 2:
+Week 3:
+Week 4:
