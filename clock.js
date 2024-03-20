@@ -196,6 +196,11 @@ image(Star, -30 ,-510/2, 60, 85);
 }
 }
 
+
+
+
+
+
 }else if(obj.seconds_until_alarm > 0){
 
       background('#e8bfbe');
