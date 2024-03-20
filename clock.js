@@ -174,7 +174,7 @@ rect(0, 190, 0, 25);
 
 function drawHours(){
   push()
-for(let i = 1; i < 12; i++){
+for(let i = 0; i < 12; i++){
   rotate (360/12)
 fill(255);
 rect(-0.5, 185, 1, 40);
