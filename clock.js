@@ -27,32 +27,22 @@ function draw_clock(obj) {
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
-  let clockHour = obj.hours;
-  
-  if (obj.hours < 1){
-    clockHour = 12;  // no zero allowed
-  }
-
-  if (obj.hours > 12){ //never over 12
-    clockHour = obj.hours - 12;
-  }
-  
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction = seconds + (millis / 1000.0);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
   let hourRotation = map(obj.hours, 0, 12, 0, 360);
-  drawLerp();
+  drawLerp(); // Gradients
   drawSides();
-  drawSideL ();
-  drawSideR ();
-  drawCenter ();
-  drawCenter2 ();
-  drawMoon();
+  drawSideL();
+  drawSideR();
+  drawCenter(); // Main star rotation
+  drawCenter2(); // Rings with small diamonds and circles
+  drawMoon(); // Cresent centerpiece with minute hand
   drawMins();
   drawHours();
-  drawHourhand();
+  drawHourhand(); // Small yellow cresent+star symbol
 
 
 
@@ -60,6 +50,23 @@ function drawLerp(){
 
 ellipseMode(CENTER);
 noStroke();
+if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+  let OpacityAm = 30;
+  fill(255, 237, 179, OpacityAm);
+  let sizeStep = 15;
+  let howManyCircles = 20;
+  let width = 0;
+  let height= 0;
+  for(let i = 0; i < howManyCircles+6; i++){
+    ellipse(width/2, height/2, sizeStep*i);
+  }
+  for(let i = 0; i < howManyCircles+15; i++){
+    fill(31, 60, 99, 20);
+    ellipse(width+500, height/2, sizeStep*i);
+    ellipse(width-500, height/2, sizeStep*i);
+  }
+}
+else{
 let OpacityAm = 30;
   fill(255, 237, 179, OpacityAm);
   let sizeStep = 15;
@@ -75,6 +82,7 @@ let OpacityAm = 30;
     ellipse(width-500, height/2, sizeStep*i);
   }
 }
+}
 
   noFill();
 
@@ -82,7 +90,7 @@ function drawCenter(){
     stroke('#ffffff');
     strokeWeight(2);
     if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
-      let IndiY = 28;
+      let IndiY = 35;
       push()
       rotate(secondsWithFraction)
     for(let i = 0; i < 12; i++){
@@ -158,7 +166,21 @@ for(let i = 0; i < 12; i++){
 }
 
 function drawMoon(){
+  if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+  push()
+  translate(0,0)
+  rotate(minRotation)
 
+  noStroke();
+  fill('#fff9d1');
+  ellipse(0, 0, 270);
+
+  fill('#0f1726');
+  ellipse(0, -20, 230);
+  image(MinuteHand, -225, -225, 450, 450);
+  pop()
+}
+else{
   push()
   translate(0,0)
   rotate(minRotation)
@@ -171,6 +193,8 @@ function drawMoon(){
   ellipse(0, -20, 180);
   image(MinuteHand, -225, -225, 450, 450);
   pop()
+
+}
 }
 
 function drawMins(){
@@ -219,19 +243,10 @@ image(Star, -30 ,-510/2, 60, 85);
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
-  let clockHour = obj.hours;
-  
-  if (obj.hours < 1){
-    clockHour = 12;
-  }
-
-  if (obj.hours > 12){
-    clockHour = obj.hours - 12;
-  }
-  
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction = seconds + (millis / 1000.0);
+  let milliRotation = seconds + (millis / 30);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
   let hourRotation = map(obj.hours, 0, 12, 0, 360);
@@ -240,70 +255,87 @@ image(Star, -30 ,-510/2, 60, 85);
   let colorB = color(163, 237, 255, OpacityAm);
   let lerpSeconds = map(obj.millis, 0, 999, 0, 1);
   let glowChange = lerpColor(colorA, colorB, lerpSeconds);
-  drawLerp();
+  drawLerp(); // Gradients
   drawSides();
-  drawSideL ();
-  drawSideR ();
-  drawCenter ();
-  drawCenter2 ();
-  drawMoon();
+  drawSideL();
+  drawSideR();
+  drawCenter(); // Main star rotation
+  drawCenter2(); // Rings with small diamonds and circles
+  drawMoon(); // Cresent centerpiece with minute hand
   drawMins();
   drawHours();
-  drawHourhand();
-
+  drawHourhand(); // Small yellow cresent+star symbol
 
 
 function drawLerp(){
 
-ellipseMode(CENTER);
-noStroke();
-
-  fill(255, 237, 179, OpacityAm);
-  let sizeStep = 15;
-  let howManyCircles = 20;
-  let width = 0;
-  let height= 0;
-  for(let i = 0; i < howManyCircles; i++){
-    ellipse(width/2, height/2, sizeStep*i);
+  ellipseMode(CENTER);
+  noStroke();
+  if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+    let OpacityAm = 30;
+    fill(255, 237, 179, OpacityAm);
+    let sizeStep = 15;
+    let howManyCircles = 20;
+    let width = 0;
+    let height= 0;
+    for(let i = 0; i < howManyCircles+6; i++){
+      ellipse(width/2, height/2, sizeStep*i);
+    }
+    for(let i = 0; i < howManyCircles+15; i++){
+      fill(glowChange);
+      ellipse(width+500, height/2, sizeStep*i);
+      ellipse(width-500, height/2, sizeStep*i);
+    }
   }
-  for(let i = 0; i < howManyCircles+15; i++){
-    fill(glowChange);
-    ellipse(width+500, height/2, sizeStep*i);
-    ellipse(width-500, height/2, sizeStep*i);
+  else{
+  let OpacityAm = 30;
+    fill(255, 237, 179, OpacityAm);
+    let sizeStep = 15;
+    let howManyCircles = 20;
+    let width = 0;
+    let height= 0;
+    for(let i = 0; i < howManyCircles; i++){
+      ellipse(width/2, height/2, sizeStep*i);
+    }
+    for(let i = 0; i < howManyCircles+15; i++){
+      fill(glowChange);
+      ellipse(width+500, height/2, sizeStep*i);
+      ellipse(width-500, height/2, sizeStep*i);
+    }
   }
 }
 
   noFill();
 
 function drawCenter(){
-  stroke('#ffffff');
-  strokeWeight(2);
-  if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
-    let IndiY = 28;
-    push()
-    rotate(secondsWithFraction)
-  for(let i = 0; i < 12; i++){
-    rotate (360/12)
-   image(Indipoint, -450/6, IndiY, size, size);
-  }
-    pop()  
+    stroke('#ffffff');
+    strokeWeight(2);
+    if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+      let IndiY = 35;
+      push()
+      rotate(secondsWithFraction)
+    for(let i = 0; i < 12; i++){
+      rotate (360/12)
+     image(Indipoint, -450/6, IndiY, size, size);
+    }
+      pop()  
 }
 else{
-  let IndiY = 110;
-push()
-rotate(secondsWithFraction)
+    let IndiY = 110;
+  push()
+  rotate(secondsWithFraction)
 for(let i = 0; i < 12; i++){
-rotate (360/12)
-image(Indipoint, -450/6, IndiY, size, size);
+  rotate (360/12)
+ image(Indipoint, -450/6, IndiY, size, size);
 }
-pop()  
+  pop()  
 }
 }
 
 function drawCenter2(){
 
 push()
-rotate(-secondsWithFraction)
+rotate(-milliRotation)
 for(let i = 0; i < 12; i++){
 rotate (360/12)
  noFill();
@@ -354,8 +386,22 @@ for(let i = 0; i < 12; i++){
   pop()
 }
 
-  function drawMoon(){
+function drawMoon(){
+  if(obj.hours <= 6 || obj.hours > 20 ) { // 20 is 8pm
+  push()
+  translate(0,0)
+  rotate(minRotation)
 
+  noStroke();
+  fill('#fff9d1');
+  ellipse(0, 0, 270);
+
+  fill('#0f1726');
+  ellipse(0, -20, 230);
+  image(MinuteHand, -225, -225, 450, 450);
+  pop()
+}
+else{
   push()
   translate(0,0)
   rotate(minRotation)
@@ -368,6 +414,8 @@ for(let i = 0; i < 12; i++){
   ellipse(0, -20, 180);
   image(MinuteHand, -225, -225, 450, 450);
   pop()
+
+}
 }
 
 function drawMins(){
