@@ -23,16 +23,21 @@ function draw_clock(obj) {
  
   if(obj.seconds_until_alarm < 0){
   background('#0f1726');
-
   angleMode (DEGREES);
   translate (width/2, height/2);
   let size = 150;
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction = seconds + (millis / 1000.0);
+  let milliRotation = map(secondsWithFraction, 0, 59.999, 0, -359.999);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
   let hourRotation = map(obj.hours, 0, 12, 0, 360);
+  let OpacityAm = 30;
+  let colorA = color(186, 133, 255, OpacityAm);
+  let colorB = color(163, 237, 255, OpacityAm);
+  let lerpSeconds = map(obj.millis, 0, 999, 0, 1);
+  let glowChange = lerpColor(colorA, colorB, lerpSeconds);
   drawLerp(); // Gradients
   drawSides();
   drawSideL();
@@ -43,7 +48,6 @@ function draw_clock(obj) {
   drawMins();
   drawHours();
   drawHourhand(); // Small yellow cresent+star symbol
-
 
 
 function drawLerp(){
@@ -82,6 +86,7 @@ let OpacityAm = 30;
     ellipse(width-500, height/2, sizeStep*i);
   }
 }
+
 }
 
   noFill();
@@ -236,7 +241,7 @@ image(Star, -30 ,-510/2, 60, 85);
 
 
 
-}else if(obj.seconds_until_alarm > 0){
+}else if(obj.seconds_until_alarm == 0){
 // changes background to a light pink
       background('#e8bfbe');
 
@@ -246,7 +251,7 @@ image(Star, -30 ,-510/2, 60, 85);
   let seconds = obj.seconds;
   let millis = obj.millis;
   let secondsWithFraction = seconds + (millis / 1000.0);
-  let milliRotation = seconds + (millis / 30);
+  let milliRotation = map(secondsWithFraction, 0, 59.999, 0, -359.999);
   let minRotation = map(obj.minutes, 0, 60, 0, 360);
   let pointRotation = map(obj.seconds, 0, 59, 0, -360);
   let hourRotation = map(obj.hours, 0, 12, 0, 360);
