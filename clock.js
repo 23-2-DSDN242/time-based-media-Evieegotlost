@@ -21,7 +21,7 @@ function draw_clock(obj) {
   //        = 0 if the alarm is currently going off
   //        > 0 --> the number of seconds until alarm should go off
  
-  if(obj.seconds_until_alarm < 0){
+  if(obj.seconds_until_alarm < 0 || obj.seconds_until_alarm == undefined){
   background('#0f1726');
   angleMode (DEGREES);
   translate (width/2, height/2);
@@ -241,7 +241,7 @@ image(Star, -30 ,-510/2, 60, 85);
 
 
 
-}else if(obj.seconds_until_alarm > 0){
+}else if(obj.seconds_until_alarm == 0){
 // changes background to a light pink
       background('#e8bfbe');
 

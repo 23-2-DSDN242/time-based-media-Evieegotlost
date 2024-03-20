@@ -26,8 +26,10 @@ Ideas:
 
 Progress: 
 - Laid out main positions of each element as well as drawing assets to import into the code
+- Kept the designs of each asset slightly more simple compared to its initial sketch as over time I'll be adding more elements 
 
 Week 2:
-- At first the rotating asset was exportd
+- At first the rotating asset was exported as displaying a whole ring of points but I later decided to export just the singular point for each variation so I could form the ring as an array which is more easier to fiddle with their placements
+
 Week 3:
 Week 4:
