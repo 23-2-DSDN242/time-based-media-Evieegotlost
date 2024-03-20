@@ -241,7 +241,7 @@ image(Star, -30 ,-510/2, 60, 85);
 
 
 
-}else if(obj.seconds_until_alarm == 0){
+}else if(obj.seconds_until_alarm > 0){
 // changes background to a light pink
       background('#e8bfbe');
 
