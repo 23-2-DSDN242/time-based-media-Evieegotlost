@@ -46,7 +46,8 @@ ________________________________________________________________________________
 
 Week 1: 
 
-- Recreated the visuals of a Maeda clock as an exercise
+- Attempted to recreate the visuals of the Maeda clock 05. Only changes being the font.
+
 - Laid out main positions of each element as well as drawing assets to import into the code. 
 
 - Kept the designs of each asset slightly simpler compared to its initial sketch as over time I'll be adding more elements that could overwhelm the clock design if the assets were more ornate. 
