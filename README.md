@@ -2,15 +2,13 @@
 
 ### README
 
-
-
 ## Clock Name: Star Map Clock
 ## Name: Evelyn Lee
 
 _____________________________________________________________________________________________________
 #### Design Intention:
 I've always had an obssession with celestial themes and fantastical depictions of astrology, this and also my already existing fascination for clocks didn't make it hard to come up with a concept off the bat. All I had to worry about was execution.
-For this clock design, I took inspiration from real life constellation star maps and magic glyphs from fictional media of the fantasy genre. The magic glyphs I usually see in shows and games always seems to rotate its rings in varying directions which makes it mesmerizing to look at, so I wanted to incorporate that idea into a traditional analogue clock form. Another 
+For this clock design, I took inspiration from real life constellation star maps and magic glyphs from fictional media of the fantasy genre. The magic glyphs I usually see in shows and games always seems to rotate its rings in varying directions which makes it mesmerizing to look at, so I wanted to incorporate that idea into a traditional analogue clock form. Another big inspiration comes from an actual mediaeval clock, [the Prague Astronomical Clock](https://www.prague.eu/en/object/places/3129/astronomical-clock) located in the Czech Republic.
 
 
 _____________________________________________________________________________________________________
@@ -46,6 +44,7 @@ ________________________________________________________________________________
  
 _____________________________________________________________________________________________________
 #### Progress:  
+
 Week 1: 
 
 - Recreated the visuals of a Maeda clock as an exercise
