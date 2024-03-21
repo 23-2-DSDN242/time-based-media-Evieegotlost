@@ -11,16 +11,6 @@ function preload() {
 }
 function draw_clock(obj) {
 
-  // draw your own clock here based on the values of obj:
-  //    obj.hours goes from 0-23
-  //    obj.minutes goes from 0-59
-  //    obj.seconds goes from 0-59
-  //    obj.millis goes from 0-999
-  //    obj.seconds_until_alarm is:
-  //        < 0 if no alarm is set
-  //        = 0 if the alarm is currently going off
-  //        > 0 --> the number of seconds until alarm should go off
- 
   if(obj.seconds_until_alarm < 0 || obj.seconds_until_alarm == undefined){
   background('#0f1726');
   angleMode (DEGREES);
@@ -369,7 +359,7 @@ rect(-1000, 230, 2000, 230);
 // image(Sunpoints, -300, -300, 620, 620);
 }
 
-  function drawSideL(){
+function drawSideL(){
   push()
   translate(-500,0)
   rotate(pointRotation)
@@ -380,7 +370,7 @@ for(let i = 0; i < 12; i++){
   pop()
 }
 
-  function drawSideR(){
+function drawSideR(){
   push()
   translate(500,0)
   rotate(pointRotation)
@@ -457,7 +447,8 @@ image(Star, -30 ,-510/2, 60, 85);
   pop()
 }
 }
-
 }
+
+
 }
 
