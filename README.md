@@ -81,6 +81,11 @@ Week 4:
 
 3. Added a lerpColor to the gradients on the side transitioning from a light blue to purple continuously 
 
-- General cleanup and attempting bug fixes.
+- General cleanup and attempting bug fixes. 
+
+_____________________________________________________________________________________________________
+#### Nitpicks and Final Thoughts
+
+Sadly I couldn't figure out how to make the alarm lerpColor to loop smoothly without this snapping reset happening every second. Also I originally wanted the night-mode to *gradually* contract the ring over time instead of immediately switching in place when it reaches 8PM however, I couldn't figure that out in time either. Other than those mishaps, I'm quite content and happy with how my clock turned out. I can say it's nice for me to look at while also being able to tell the time just fine.
 
 _____________________________________________________________________________________________________
